@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar") %>
+
+    <h1>Edit comment</h1>
+
+    <form action="/comments/<%=comment.id%>?_method=PATCH" method="post">
+      <section>
+        <label for="title">Title of comment:</label>
+        <input
+          type="text"
+          name="comment[title]"
+          id="title"
+          placeholder="title"
+          value="<%=comment.title%>"
+        />
+      </section>
+      <section>
+        <label for="text">Text of comment:</label>
+        <textarea name="comment[text]" id="text" cols="30" rows="3">
+<%=comment.text%></textarea
+        >
+      </section>
+      <button>Save comment</button>
+    </form>
+
+    <!-- <a href="/comments">Back to index</a>  -->
+  </body>
+</html>

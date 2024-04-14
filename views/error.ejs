@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar") %>
+
+    <h1>Error page</h1>
+
+    <h2>Status code</h2>
+    <p><%=error.statusCode %></p>
+
+    <h2>Error message</h2>
+    <p><%=error.message %></p>
+
+    <!--  <a href="/comments">Back to comments</a>  -->
+  </body>
+</html>

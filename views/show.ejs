@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar") %>
+
+    <h1>Details on <%=comment.title %>:</h1>
+    <p>Author of the comment: <%= comment.author.username%></p>
+    <p>Text of the comment: <%= comment.text%></p>
+
+    <!-- <a href="/comments">Back to index</a>  -->
+    <%if (comment.author._id.equals(currentUser)) { %>
+    <a href="/comments/<%=comment.id%>/edit">Edit comment</a>
+
+    <form action="/comments/<%=comment.id%>?_method=DELETE" method="post">
+      <button>Delete comment</button>
+    </form>
+
+    <% } %>
+  </body>
+</html>

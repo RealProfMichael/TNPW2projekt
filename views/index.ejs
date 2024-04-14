@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar") %>
+    <h1>List of all comments</h1>
+
+    <% for (let comment of comments) { %>
+    <div>
+      <h2><%=comment.title %></h2>
+      <p><%= comment.text%></p>
+
+      <a href="/comments/<%=comment.id%>">details</a>
+    </div>
+    <%} %>
+
+    <!-- <a href="/comments/new">New comment</a>  -->
+  </body>
+</html>
